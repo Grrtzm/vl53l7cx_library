@@ -1,0 +1,8 @@
+dependencies:
+  idf:
+    version: ">=5.5.0"
+version: "0.0.1"
+description: A vl53l8cx library for esp32 using the esp-idf framework.
+license: MIT
+repository: https://github.com/grrtzm/VL53L7CX-Library
+url: https://github.com/grrtzm/VL53L7CX-Library
