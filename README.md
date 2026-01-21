@@ -59,7 +59,7 @@ Clone this repository into your project:
 ```
 your_project/
   components/
-    V53L7CX-Library/
+    vl53l7cx-library/
   main/
   CMakeLists.txt
 ```
@@ -76,7 +76,7 @@ Add to `idf_component.yml`:
 
 ```yaml
 dependencies:
-  grrtzm/v53l7cx_library: "^1.0.5"
+  grrtzm/v53l7cx-library: "^1.0.6"
 ```
 
 ## Examples

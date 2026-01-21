@@ -1,0 +1,28 @@
+﻿name: Build examples
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        target: [esp32]
+        example: [basic_ranging, ultra_low_power]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build example (ESP-IDF)
+        uses: espressif/esp-idf-ci-action@v1
+        with:
+          esp_idf_version: v5.5.2
+          command: |
+            export IDF_TARGET=${{ matrix.target }}
+            cd examples/${{ matrix.example }}
+            export EXTRA_COMPONENT_DIRS="$(pwd)/../.."
+            idf.py set-target ${{ matrix.target }}
+            idf.py build
